@@ -1,7 +1,7 @@
 # Perpl nest
 
 A self-hosted SQL index of **[Perpl](https://app.perpl.xyz)**, the perpetual futures exchange on
-Monad, built with [Nuthatch](https://github.com/nightswatchhq/nuthatch). One binary, one
+Monad, built with [Nuthatch](https://github.com/nuthatch-org/nuthatch). One binary, one
 directory, and every fill, order, funding event, liquidation and market definition the exchange
 contract has ever emitted becomes a table you can query with SQL, on your own machine, with no
 account and nothing phoning home.
@@ -15,7 +15,7 @@ the only source.
 **Status, 2026-09-04: building.** Every event the contract emits decodes, and the first backfill
 from Perpl's deployment is running. Parity against Perpl's public API is scripted and not yet run,
 so nothing below should be read as verified until the tracking issue says so:
-[nightswatchhq/nuthatch#1148](https://github.com/nightswatchhq/nuthatch/issues/1148). The label
+[nuthatch-org/nuthatch#1148](https://github.com/nuthatch-org/nuthatch/issues/1148). The label
 becomes *available* when the backfill has completed and parity has passed.
 
 ---
@@ -53,7 +53,7 @@ On top of the raw tables, `views/10-perpl.sql` defines five views in the units p
 Volume is counted from the maker side because `TakerOrderFilledV2` carries no market or account of
 its own, and every match has exactly one maker. Open interest and per-account PnL are deliberately
 absent: they need the position state machine that Perpl's SDK replays, and they belong in a
-[Nuthatch incremental entity](https://github.com/nightswatchhq/nuthatch/blob/main/docs/rfcs/0041-authored-incremental-entities.md)
+[Nuthatch incremental entity](https://github.com/nuthatch-org/nuthatch/blob/main/docs/rfcs/0041-authored-incremental-entities.md)
 once the fills have proved parity.
 
 ---
@@ -64,7 +64,7 @@ You need the Nuthatch binary (3.3.1 or later, which has Monad built in) and a Mo
 
 ```sh
 curl -fsSL https://nuthatch-indexer.com/install.sh | sh
-nuthatch init --from https://github.com/nightswatchhq/perpl-nest
+nuthatch init --from https://github.com/nuthatch-org/perpl-nest
 nuthatch dev --dir perpl-nest --rpc https://your-monad-endpoint --window 320 --seal-direct
 ```
 
