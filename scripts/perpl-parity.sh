@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Perpl nest against Perpl's own public API (nightswatchhq/nuthatch#1148, Phase 4).
+# Perpl nest against Perpl's own public API (nuthatch-org/nuthatch#1148, Phase 4).
 #
 # Two comparisons, both against endpoints that need no key:
 #

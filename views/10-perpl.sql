@@ -1,4 +1,4 @@
--- Perpl on Monad (nightswatchhq/nuthatch#1148): the venue's data in the units people use.
+-- Perpl on Monad (nuthatch-org/nuthatch#1148): the venue's data in the units people use.
 --
 -- Every on-chain amount is a fixed-point integer with a per-market or per-exchange scale. The scales
 -- are on chain too: `priceDecimals` and `lotDecimals` arrive with each market in `ContractAddedV2`
